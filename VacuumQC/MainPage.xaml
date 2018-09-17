@@ -1,0 +1,105 @@
+﻿<Page
+    x:Class="VacuumQC.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VacuumQC"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="masterGrid">
+        <Image x:Name="logoImage" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button x:Name="backButton" HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+                Content="Back" Click="backButton_Click"/>
+        <Button x:Name="nextButton" HorizontalAlignment="Right" VerticalAlignment="Bottom" 
+                Content="Next" Click="nextButton_Click"/>
+
+        <FlipView x:Name="mainFlipView">
+            <FlipView.Template>
+                <ControlTemplate>
+                    <ItemsPresenter ManipulationMode="None"/>
+                </ControlTemplate>
+            </FlipView.Template>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock Text="Please enter the serial number of the vacuum to be tested:"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBox x:Name="snTextBox" Text="SN"/>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock Text="Please select the model of vacuum to be tested:"/>
+                        <ListView x:Name="selectedModel"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="Plug in the vacuum and connect its hose,"/>
+                        <TextBlock Text="but do NOT turn it on."/>
+                        <TextBlock Text="Click 'Next' when ready."/>
+                    </StackPanel>
+                    <Image x:Name="plugImage"/>
+                </StackPanel>
+            </Grid>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Text="Taking ambient data..."/>
+                    <ProgressBar x:Name="ambientProgress" Value="0" Maximum="10"/>
+                </StackPanel>
+            </Grid>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="Turn on the vacuum.  Make sure both ports are open."/>
+                        <TextBlock Text="Click 'Next' when ready"/>
+                    </StackPanel>
+                    <Image x:Name="openPortsImage"/>
+                </StackPanel>
+            </Grid>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Taking 'Open' data..."/>
+                    <ProgressBar x:Name="openProgress" Value="0" Maximum="10"/>
+                </StackPanel>
+            </Grid>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Text="Close the right-hand port."/>
+                        <TextBlock Text="Click 'Next' when ready."/>
+                    </StackPanel>
+                    <Image x:Name="halfPortImage"/>
+                </StackPanel>
+            </Grid>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Taking 'Half' data..."/>
+                    <ProgressBar x:Name="halfProgress" Value="0" Maximum="10"/>
+                </StackPanel>
+            </Grid>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Text="Close both ports."/>
+                        <TextBlock Text="Click 'Next' when ready."/>
+                    </StackPanel>
+                    <Image x:Name="closedPortImage"/>
+                </StackPanel>
+            </Grid>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Taking 'Closed' data..."/>
+                    <ProgressBar x:Name="closedProgress" Value="0" Maximum="10"/>
+                </StackPanel>
+            </Grid>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock x:Name="reportBlock" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+        </FlipView>
+
+    </Grid>
+</Page>

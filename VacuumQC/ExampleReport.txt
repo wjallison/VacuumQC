@@ -1,0 +1,37 @@
+﻿S/N #########
+950
+
+PASS
+
+Full Airflow:
+Current (A):
+MIN			TESTED			MAX
+0			5				10
+Pressure (in H2O):
+MIN			TESTED			MAX
+0			5				10
+Airflow ():
+MIN			TESTED			MAX
+0			5				10
+
+Halved Airflow:
+Current (A):
+MIN			TESTED			MAX
+0			5				10
+Pressure (in H2O):
+MIN			TESTED			MAX
+0			5				10
+Airflow ():
+MIN			TESTED			MAX
+0			5				10
+
+No Airflow:
+Current (A):
+MIN			TESTED			MAX
+0			5				10
+Pressure (in H2O):
+MIN			TESTED			MAX
+0			5				10
+Airflow ():
+MIN			TESTED			MAX
+0			5				10
